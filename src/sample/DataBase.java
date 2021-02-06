@@ -11,13 +11,15 @@ public class DataBase {
     public static List<Excercise> excerciseSessions;
     public static int excludeExcerciseCount = 3;
 
-    public static String getExcerciseRecommendation() {
-        Random rand = new Random();
-        List<String> tmpExcercistTypes = new ArrayList<>().addAll(excerciseTypes);
+    public static Excercise getExcerciseRecommendation() {
+        List<String> tmpExcercistTypes = new ArrayList<>();
+        tmpExcercistTypes.addAll(excerciseTypes);
         for (int i=excerciseSessions.size()-1-excludeExcerciseCount; i<excerciseSessions.size(); i++)
+            tmpExcercistTypes.remove(excerciseSessions.get(i).type);
 
-
-        rand.nextInt(excerciseTypes.size());
+        Random rand = new Random();
+        int idx = rand.nextInt(excerciseTypes.size());
+        return new Excercise(excerciseTypes.get(idx));
     }
 
     public static void addSession(Excercise excercise) {
