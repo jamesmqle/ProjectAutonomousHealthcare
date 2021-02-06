@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@sore.css">
+         <children>
+            <Button layoutX="376.0" layoutY="391.0" mnemonicParsing="false" text="Yes" />
+            <Label layoutX="76.0" layoutY="98.0" text="Thats fine! Its okay to take things slow sometimes!">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="148.0" layoutY="185.0" text="A wise man once said, &quot;It does not matter how slow you go, &#10;as long as you do not stop.&quot;" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Eras Bold ITC" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="265.0" layoutY="291.0" text="Are you experiencing any discomfort?">
+               <font>
+                  <Font name="Eras Bold ITC" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>
-
