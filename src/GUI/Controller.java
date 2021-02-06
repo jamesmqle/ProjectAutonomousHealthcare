@@ -25,7 +25,11 @@ public class Controller {
     }
 
     public void handleButtonSore(ActionEvent event) throws IOException {
-    	
+    	Parent energeticParent = FXMLLoader.load(getClass().getResource("sore.fxml"));
+        Scene energeticScene = new Scene(energeticParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(energeticScene);
+        window.show();
     }
     public void handleButtonNeutral(ActionEvent event) throws IOException {
     	Parent energeticParent = FXMLLoader.load(getClass().getResource("neutral.fxml"));

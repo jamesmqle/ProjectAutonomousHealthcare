@@ -4,7 +4,6 @@ import java.util.*;
 import java.io.*;
 
 public class Exercise {
-	
 	private Date date;
 	private double duration;
 	private List<String> soreAreas;
@@ -15,6 +14,10 @@ public class Exercise {
 
 	public Exercise(Date date) {
 	    
+	}
+	
+	public Exercise() {
+		
 	}
 	
 	public void end() {
