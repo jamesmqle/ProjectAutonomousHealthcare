@@ -26,7 +26,6 @@ public class Controller {
     
     @FXML
     public void handleButtonReady(ActionEvent event) throws IOException {
-    	System.out.println("James");
     	 Parent ready = FXMLLoader.load(getClass().getResource("exercise.fxml"));
          Scene readyScene = new Scene(ready);
          Stage readyWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
