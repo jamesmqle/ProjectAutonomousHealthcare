@@ -6,3 +6,17 @@
     -fx-background-repeat: no-repeat;
     -fx-background-size: stretch;
 }
+
+.label{
+    -fx-text-fill: black;
+}
+
+.button{
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+
+.button:hover{
+    -fx-background-color: green;
+    -fx-text-fill: white;
+}
