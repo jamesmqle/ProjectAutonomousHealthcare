@@ -1,4 +1,4 @@
-package sample;
+package GUI;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,12 +10,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("IntroScreen.fxml"));
         primaryStage.setTitle("GoHealth");
         Scene scene = new Scene(root, 800, 600);
-        scene.getStylesheets().add("sample/stylesheet.css");
+        scene.getStylesheets().add("GUI/IntroScreenStylesheet.css");
         primaryStage.setScene(scene);
         primaryStage.show();
+
     }
 
 
