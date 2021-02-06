@@ -24,11 +24,15 @@ public class Controller {
         window.show();
     }
 
-    public void handleButtonSore(ActionEvent event){
-        System.out.println("Too bad so sad!!!");
+    public void handleButtonSore(ActionEvent event) throws IOException {
+    	
     }
-    public void handleButtonNeutral(ActionEvent event){
-        System.out.println("bleh");
+    public void handleButtonNeutral(ActionEvent event) throws IOException {
+    	Parent energeticParent = FXMLLoader.load(getClass().getResource("neutral.fxml"));
+        Scene energeticScene = new Scene(energeticParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(energeticScene);
+        window.show();
     }
     
     /*
