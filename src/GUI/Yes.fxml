@@ -24,12 +24,13 @@
                   <Font name="MS Gothic" size="30.0" />
                </font></Label>
             <Button layoutX="329.0" layoutY="310.0" mnemonicParsing="false" onAction="#back" prefHeight="56.0" prefWidth="141.0" styleClass="neutralButton" text="Back" />
-            <Label fx:id="discomfort" layoutX="145.0" layoutY="493.0" prefHeight="56.0" prefWidth="522.0" stylesheets="@IntroScreenStylesheet.css">
+            <Label fx:id="discomfort" layoutX="132.0" layoutY="192.0" prefHeight="56.0" prefWidth="522.0" stylesheets="@IntroScreenStylesheet.css">
                <font>
                   <Font name="MS Gothic" size="14.0" />
                </font>
             </Label>
             <Button layoutX="533.0" layoutY="310.0" mnemonicParsing="false" onAction="#hip" prefHeight="56.0" prefWidth="141.0" styleClass="exhaustedButton" text="Hip" />
+            <Button layoutX="533.0" layoutY="492.0" mnemonicParsing="false" onAction="#goToMainForSore" prefHeight="56.0" prefWidth="141.0" styleClass="exhaustedButton" text="Return to main" />
          </children>
       </AnchorPane>
    </children>
