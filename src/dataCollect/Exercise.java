@@ -1,72 +1,75 @@
 package dataCollect;
-
 import java.util.*;
-import java.io.*;
 
-public class Exercise {
-	private Date date;
-	private double duration;
-	private List<String> soreAreas;
-	private boolean wantToExercise;
-	private String exercise;
-	private int reps;
+import dataCollect.DataBase;
+import dataCollect.exercises.Jumps;
+import dataCollect.exercises.NoExercise;
+import dataCollect.exercises.Stretches;
 
+public abstract class Exercise {
+	public String type; //type of exercise being conducted in this session
+	public boolean isOngoing = false;
+	public boolean hasEnded = false;
+	public String difficulty;
 
-	public Exercise(Date date) {
-	    
-	}
-	
-	public Exercise() {
-		
-	}
-	
-	public void end() {
-		
-	}
+	public Date date;
+	public long duration;
+	public List<String> soreAreasBefore;
+	public List<String> soreAreasAfter;
 
-
-	public Date getDate() {
-		return date;
+	public void startSession(List<String> soreAreas) {
+		if(this.hasEnded) return;
+		this.soreAreasBefore = soreAreas;
+		this.date = new Date();
+		boolean ongoing = true;
 	}
 
-
-	public List<String> getSoreAreas() {
-		return soreAreas;
+	public void endSession(List<String> soreAreas) {
+		if (!this.isOngoing) return;
+		this.soreAreasAfter = soreAreas;
+		this.duration = new Date().getTime()-this.date.getTime();
+		this.isOngoing = false;
+		DataBase.addSession(this);
+		this.hasEnded = true;
 	}
 
+	public abstract Exercise getCopy();
+	public abstract String getGif();
+	public abstract List<String> getInstructions();
 
-	public void setSoreAreas(List<String> soreAreas) {
-		this.soreAreas = soreAreas;
+	protected Exercise makeCopyInto(Exercise e) {
+		e.type = this.type;
+		e.isOngoing = this.isOngoing;
+		e.hasEnded = this.hasEnded;
+		e.difficulty = this.difficulty;
+
+		e.date = (Date) this.date.clone();
+		e.duration = this.duration;
+		e.soreAreasBefore = new ArrayList<>();
+		e.soreAreasAfter = new ArrayList<>();
+		e.soreAreasBefore.addAll(this.soreAreasBefore);
+		e.soreAreasBefore.addAll(this.soreAreasAfter);
+		return e;
 	}
 
+	public String createCSVdata(String delimiter) {
+		String soreAreasBfore = "";
+		String soreAreasAfter = "";
 
-	public boolean isWantToExercise() {
-		return wantToExercise;
+		String dem = ",";
+		for (String area : this.soreAreasBefore) {
+			soreAreasBfore += area+dem;
+		}
+		for (String area : this.soreAreasAfter) {
+			soreAreasBfore += area+dem;
+		}
+		return this.type + delimiter +
+				this.isOngoing + delimiter +
+				this.hasEnded + delimiter +
+				this.difficulty + delimiter +
+				this.date.getTime() + delimiter +
+				this.duration + delimiter +
+				soreAreasBfore + delimiter +
+				soreAreasAfter + delimiter;
 	}
-
-
-	public void setWantToExercise(boolean wantToExercise) {
-		this.wantToExercise = wantToExercise;
-	}
-
-
-	public String getExercise() {
-		return exercise;
-	}
-
-
-	public void setExercise(String exercise) {
-		this.exercise = exercise;
-	}
-
-
-	public int getReps() {
-		return reps;
-	}
-
-
-	public void setReps(int reps) {
-		this.reps = reps;
-	}
-	
 }
