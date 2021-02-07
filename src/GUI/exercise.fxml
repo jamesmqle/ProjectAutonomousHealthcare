@@ -16,12 +16,12 @@
             <Image url="@img.png" />
          </image>
       </ImageView>
-      <Label id="exerciseDescription" fx:id="exerciseDescription" alignment="TOP_LEFT" layoutX="109.0" layoutY="475.0" prefHeight="77.0" prefWidth="570.0" text="Exercise description" textAlignment="JUSTIFY" wrapText="true">
+      <Label id="exerciseDescription" fx:id="exerciseDescription" alignment="TOP_LEFT" layoutX="109.0" layoutY="475.0" prefHeight="77.0" prefWidth="570.0" text="Let's start out with a simple stretch" textAlignment="JUSTIFY" wrapText="true">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label id="exerciseName" fx:id="exerciseName" layoutX="109.0" layoutY="445.0" prefHeight="26.0" prefWidth="296.0" text="Exercise Name" underline="true">
+      <Label id="exerciseName" fx:id="exerciseName" layoutX="109.0" layoutY="445.0" prefHeight="26.0" prefWidth="296.0" text="Stretch - easy" underline="true">
          <font>
             <Font size="20.0" />
          </font>

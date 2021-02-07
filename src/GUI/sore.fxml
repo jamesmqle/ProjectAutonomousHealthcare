@@ -5,12 +5,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1">
+<AnchorPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@sore.css">
          <children>
-            <Button layoutX="376.0" layoutY="391.0" mnemonicParsing="false" text="Yes" />
+            <Button layoutX="307.0" layoutY="399.0" mnemonicParsing="false" text="Yes" />
             <Label layoutX="76.0" layoutY="98.0" text="Thats fine! Its okay to take things slow sometimes!">
                <font>
                   <Font name="Copperplate Gothic Bold" size="24.0" />
@@ -26,6 +25,7 @@
                   <Font name="Eras Bold ITC" size="14.0" />
                </font>
             </Label>
+            <Button layoutX="459.0" layoutY="399.0" mnemonicParsing="false" styleClass="exhaustedButton" stylesheets="@IntroScreenStylesheet.css" text="No" />
          </children>
       </AnchorPane>
    </children>

@@ -92,5 +92,13 @@ public class Controller {
         window.setScene(energeticScene);
         window.show();
     }
+
+    public void goToMainForSore(ActionEvent event) throws IOException {
+        Parent intro = FXMLLoader.load(getClass().getResource("introScreen.fxml"));
+        Scene energeticScene = new Scene(intro);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(energeticScene);
+        window.show();
+    }
     
 }
