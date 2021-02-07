@@ -82,25 +82,9 @@ public class DataBase {
 
         //pick a random exercise excluding the recent most exercises
 
-        List<Exercise> newList = new ArrayList<>();
-        newList.addAll(exerciseList);
-        for (Exercise exercise : exerciseList) {
-            boolean remove = false;
-            int startIdx = exerciseSessions.size() - 1 - excludeExerciseCount;
-            if (startIdx<0)
-                startIdx = 0;
-            for (int i = startIdx; i < exerciseSessions.size(); i++) {
-                if (exercise.type.equals(exerciseSessions.get(i).type)) {
-                    remove = true;
-                }
-            }
-            if (remove && newList.size()>1)
-                newList.remove(exercise);
-        }
-
         Random rand = new Random();
-        int idx = rand.nextInt(newList.size());
-        return newList.get(idx);
+        int idx = rand.nextInt(exerciseList.size());
+        return exerciseList.get(idx);
     }
 
     public static Exercise getExerciseRecommendationOld(String feeling) {

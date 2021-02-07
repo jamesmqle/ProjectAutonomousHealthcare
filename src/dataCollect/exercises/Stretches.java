@@ -23,7 +23,7 @@ public class Stretches extends Exercise {
     }
     @Override
     public String getGif() {
-        return null;
+        return "C:\\Users\\stani\\IdeaProjects\\ProjectAutonomousHealthcare\\src\\dataCollect\\media\\Senior-Stretching.jpg";
     }
 
     @Override
