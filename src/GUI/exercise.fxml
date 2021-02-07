@@ -13,7 +13,7 @@
       <Button id="anotherExercise" layoutX="228.0" layoutY="553.0" mnemonicParsing="false" onAction="#refreshExercise" text="Another Exercise" />
       <ImageView id="exerciseImage" fx:id="imageDisplay" fitHeight="332.0" fitWidth="600.0" layoutX="95.0" layoutY="96.0" pickOnBounds="true">
          <image>
-            <Image url="@img.png" />
+            <Image url="@../../../../Downloads/2014-12-24-100upcrop.gif" />
          </image>
       </ImageView>
       <Label id="exerciseDescription" fx:id="exerciseDescription" alignment="TOP_LEFT" layoutX="109.0" layoutY="475.0" prefHeight="77.0" prefWidth="570.0" text="Let's start out with a simple stretch" textAlignment="JUSTIFY" wrapText="true">
