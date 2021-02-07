@@ -21,7 +21,7 @@ public abstract class Exercise {
 		if(this.hasEnded) return;
 		this.soreAreasBefore = soreAreas;
 		this.date = new Date();
-		boolean ongoing = true;
+		this.isOngoing = true;
 	}
 
 	public void endSession(List<String> soreAreas) {
@@ -29,8 +29,8 @@ public abstract class Exercise {
 		this.soreAreasAfter = soreAreas;
 		this.duration = new Date().getTime()-this.date.getTime();
 		this.isOngoing = false;
-		DataBase.addSession(this);
 		this.hasEnded = true;
+		DataBase.addSession(this);
 	}
 
 	public abstract Exercise getCopy();
@@ -43,12 +43,14 @@ public abstract class Exercise {
 		e.hasEnded = this.hasEnded;
 		e.difficulty = this.difficulty;
 
-		e.date = (Date) this.date.clone();
+		e.date = new Date();
 		e.duration = this.duration;
 		e.soreAreasBefore = new ArrayList<>();
 		e.soreAreasAfter = new ArrayList<>();
-		e.soreAreasBefore.addAll(this.soreAreasBefore);
-		e.soreAreasBefore.addAll(this.soreAreasAfter);
+		if (!(this.soreAreasBefore==null))
+			e.soreAreasBefore.addAll(this.soreAreasBefore);
+		if (!(this.soreAreasAfter ==null))
+		e.soreAreasAfter.addAll(this.soreAreasAfter);
 		return e;
 	}
 
@@ -63,6 +65,10 @@ public abstract class Exercise {
 		for (String area : this.soreAreasAfter) {
 			soreAreasBfore += area+dem;
 		}
+		if (soreAreasBfore.equals(""))
+			soreAreasBfore = "null";
+		if (soreAreasAfter.equals(""))
+			soreAreasAfter = "null";
 		return this.type + delimiter +
 				this.isOngoing + delimiter +
 				this.hasEnded + delimiter +
