@@ -33,8 +33,8 @@ public class NoExercise extends Exercise {
     }
 
     @Override
-    public List<String> getInstructions() {
+    public String getInstructions() {
 
-        return null;
+        return "Sometimes the best remedy is rest";
     }
 }

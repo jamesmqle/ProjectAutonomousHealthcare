@@ -60,8 +60,50 @@ public class DataBase {
         System.out.println("success!");
     }
 
-
     public static Exercise getExerciseRecommendation(String feeling) {
+        //energetic - random between easy and hard
+        //neutral - easy
+        //exhausted - are you sore
+        getDataFrom(new File(dataRelPath));
+        List<Exercise> exerciseList = new ArrayList<>();
+        if (feeling.toLowerCase().equals("sore"))
+            return new NoExercise();
+        else if (feeling.toLowerCase().equals("neutral")) {
+            for (Exercise exercise : easyExercises)
+                exerciseList.add(exercise.getCopy());
+        } else if (feeling.toLowerCase().equals("energetic")) {
+            for (Exercise exercise : easyExercises)
+                exerciseList.add(exercise.getCopy());
+            for (Exercise exercise : mediumExercises)
+                exerciseList.add(exercise.getCopy());
+            for (Exercise exercise : hardExercises)
+                exerciseList.add(exercise.getCopy());
+        }
+
+        //pick a random exercise excluding the recent most exercises
+
+        List<Exercise> newList = new ArrayList<>();
+        newList.addAll(exerciseList);
+        for (Exercise exercise : exerciseList) {
+            boolean remove = false;
+            int startIdx = exerciseSessions.size() - 1 - excludeExerciseCount;
+            if (startIdx<0)
+                startIdx = 0;
+            for (int i = startIdx; i < exerciseSessions.size(); i++) {
+                if (exercise.type.equals(exerciseSessions.get(i).type)) {
+                    remove = true;
+                }
+            }
+            if (remove && newList.size()>1)
+                newList.remove(exercise);
+        }
+
+        Random rand = new Random();
+        int idx = rand.nextInt(newList.size());
+        return newList.get(idx);
+    }
+
+    public static Exercise getExerciseRecommendationOld(String feeling) {
         //energetic - random between easy and hard
         //neutral - easy
         //exhausted - are you sore

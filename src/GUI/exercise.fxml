@@ -5,15 +5,27 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@neutral.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller">
    <children>
-      <Label layoutX="316.0" layoutY="76.0" prefHeight="66.0" prefWidth="209.0" text="This is your daily exercise!" />
-      <Button layoutX="695.0" layoutY="540.0" mnemonicParsing="false" text="Finish" />
-      <ImageView fitHeight="332.0" fitWidth="600.0" layoutX="94.0" layoutY="157.0" pickOnBounds="true">
+      <Label layoutX="290.0" layoutY="30.0" prefHeight="66.0" prefWidth="209.0" text="This is your daily exercise!" />
+      <Button id="anotherExercise" layoutX="228.0" layoutY="553.0" mnemonicParsing="false" onAction="#refreshExercise" text="Another Exercise" />
+      <ImageView id="exerciseImage" fx:id="imageDisplay" fitHeight="332.0" fitWidth="600.0" layoutX="95.0" layoutY="96.0" pickOnBounds="true">
          <image>
             <Image url="@img.png" />
          </image>
       </ImageView>
+      <Label id="exerciseDescription" fx:id="exerciseDescription" alignment="TOP_LEFT" layoutX="109.0" layoutY="475.0" prefHeight="77.0" prefWidth="570.0" text="Exercise description" textAlignment="JUSTIFY" wrapText="true">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label id="exerciseName" fx:id="exerciseName" layoutX="109.0" layoutY="445.0" prefHeight="26.0" prefWidth="296.0" text="Exercise Name" underline="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button id="finish" layoutX="493.0" layoutY="553.0" mnemonicParsing="false" onAction="#goToMain" text="Finish" />
    </children>
 </AnchorPane>

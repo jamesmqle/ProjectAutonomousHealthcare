@@ -34,7 +34,7 @@ public class SittingDumbbellCurls extends Exercise {
     }
 
     @Override
-    public List<String> getInstructions() {
-        return null;
+    public String getInstructions() {
+        return "Repeat this 7 times. It is a bit challenging, but your back will thank you later";
     }
 }

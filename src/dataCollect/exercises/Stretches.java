@@ -27,8 +27,8 @@ public class Stretches extends Exercise {
     }
 
     @Override
-    public List<String> getInstructions() {
-        return null;
+    public String getInstructions() {
+        return "Ah, the good old stretch. Do not underestimate its helpfulness";
     }
 
     @Override

@@ -35,7 +35,7 @@ public abstract class Exercise {
 
 	public abstract Exercise getCopy();
 	public abstract String getGif();
-	public abstract List<String> getInstructions();
+	public abstract String getInstructions();
 
 	protected Exercise makeCopyInto(Exercise e) {
 		e.type = this.type;

@@ -37,7 +37,7 @@ public class Jumps extends Exercise {
     }
 
     @Override
-    public List<String> getInstructions() {
-        return null;
+    public String getInstructions() {
+        return "Try repeating this 10 times. It helps with lower back issues";
     }
 }
