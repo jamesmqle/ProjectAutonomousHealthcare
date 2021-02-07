@@ -13,7 +13,7 @@ import java.io.IOException;
 public class Controller {
     
     @FXML
-    Button buttonEnergetic, buttonNeutral, buttonSore;
+    Button buttonEnergetic, buttonNeutral, buttonSore, buttonReady;
     
     @FXML
     public void handleButtonEnergetic(ActionEvent event) throws IOException {
@@ -22,6 +22,15 @@ public class Controller {
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(energeticScene);
         window.show();
+    }
+    
+    @FXML
+    public void handleButtonReady(ActionEvent event) throws IOException {
+    	 Parent ready = FXMLLoader.load(getClass().getResource("exercise.fxml"));
+         Scene readyScene = new Scene(ready);
+         Stage readyWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
+         readyWindow.setScene(readyScene);
+         readyWindow.show();
     }
 
     public void handleButtonSore(ActionEvent event) throws IOException {
