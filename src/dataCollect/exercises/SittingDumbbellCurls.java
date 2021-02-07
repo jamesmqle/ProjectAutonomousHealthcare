@@ -30,7 +30,7 @@ public class SittingDumbbellCurls extends Exercise {
 
     @Override
     public String getGif() {
-        return null;
+        return "C:\\Users\\stani\\IdeaProjects\\ProjectAutonomousHealthcare\\src\\dataCollect\\media\\SittingDumbbellCurls_hard.gif";
     }
 
     @Override

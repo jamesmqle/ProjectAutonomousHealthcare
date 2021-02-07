@@ -9,11 +9,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
-import javax.swing.text.html.ImageView;
+
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Controller {
 	public static String feeling;
@@ -68,15 +71,23 @@ public class Controller {
 		feeling = "neutral";
 	}
 
-	public void refreshExercise(ActionEvent event) throws IOException {
-		Exercise e = DataBase.getExerciseRecommendation(feeling);
-		exerciseName.setText(e.type+" - "+e.difficulty);
-		exerciseDescription.setText(e.getInstructions());
-	}
+//	public void refreshExercise(ActionEvent event) throws IOException {
+//		Exercise e = DataBase.getExerciseRecommendation(feeling);
+//		exerciseName.setText(e.type+" - "+e.difficulty);
+//		exerciseDescription.setText(e.getInstructions());
+//	}
 
-	/*
-    When this method is called, it will change the Scene to exercise view 
-	 */
+
+    public void refreshExercise(ActionEvent event) throws IOException {
+        Exercise e = DataBase.getExerciseRecommendation(feeling);
+        e.startSession(new ArrayList<>());
+        exerciseName.setText(e.type+" - "+e.difficulty);
+        exerciseDescription.setText(e.getInstructions());
+        e.endSession(new ArrayList<>());
+
+    }
+    
+ 
 	@FXML
 	public void changeScreenButtonPushed(ActionEvent event) throws IOException {
 		Parent exerciseParent = FXMLLoader.load(getClass().getResource("exercise.fxml"));
